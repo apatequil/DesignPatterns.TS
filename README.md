@@ -1,2 +1,21 @@
 # DesignPatterns.TS
-Collection of design patterns with TypeScript examples
+
+## Patterns Implemented
+- None
+## Patterns to implement
+- Abstract Factory
+- Adapter
+- Bridge
+- Decorator
+- Facade
+- Flyweight
+- Mediator
+- Prototype
+- Proxy
+- Singleton
+- Visitor
+
+
+
+
+

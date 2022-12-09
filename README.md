@@ -2,7 +2,7 @@
 
 ## Patterns Implemented
 - None
-## Patterns to implement
+## Planned Patterns
 - Abstract Factory
 - Adapter
 - Bridge

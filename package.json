@@ -1,5 +1,5 @@
 {
-  "name": "DesignPatterns.TS",
+  "name": "design_patterns_ts",
   "version": "1.0.0",
   "description": "Collection of design pattern examples in TS",
   "main": "index.js",
@@ -7,16 +7,17 @@
   "author": "apatequil",
   "license": "MIT",
   "dependencies": {
+    "@types/readline-sync": "^1.4.4",
     "chalk": "^4.1.2",
     "readline-sync": "^1.4.10"
   },
   "scripts": {
-    "ds:flyweight": "set NODE_OPTIONS=\"-r ts-node/register\" && ts-node ./src/scripts/run_flyweight.ts"
+    "ds:flyweight": "ts-node ./src/scripts/run_flyweight.ts"
   },
   "devDependencies": {
-    "@types/node": "^16.11.6",
+    "@types/node": "^16.18.8",
     "ts-node": "^10.4.0",
-    "tslib": "^2.3.1",
+    "tslib": "^2.4.1",
     "typescript": "^4.4.4"
   }
 }

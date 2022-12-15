@@ -1,9 +1,16 @@
-import { TextFlyweight } from "./flyweights";
+import { terminal } from '../../lib/ui'
+import { IPrintableFlyweight, TextFlyweight } from './flyweights'
 
 export class FlyweightCharacter {
-    constructor(value: string,
-        position: { cols: number; rows: number },
-        // Stores a reference to flyweight data rather
-        // that storing the data directly
-        sharedState: TextFlyweight) { }
+  constructor(
+    public value: string,
+    public position: { cols: number; rows: number },
+    public readonly flyweight: TextFlyweight,
+  ) {}
+
+  print = (): void => {
+    // We'd use the shared state here to apply color/font/etc.. in a real
+    // world
+    this.flyweight.print(this.value)
+  }
 }

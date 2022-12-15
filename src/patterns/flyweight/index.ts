@@ -1,1 +1,2 @@
-export { CharacterFactory } from "./character-factory";
+export { CharacterFactory } from './character-factory'
+export { Document } from './document'

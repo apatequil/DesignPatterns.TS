@@ -1,4 +1,4 @@
-import chalk, { Chalk as FontColor } from 'chalk'
+import chalk, { hex } from 'chalk'
 import { buildIndent } from '../formatting/strings'
 import { question, BasicOptions } from 'readline-sync'
 
@@ -18,13 +18,13 @@ export function prompt(message: string, options?: BasicOptions): string {
   return question(message, options)
 }
 
-export function print(message: string, includeNewline: boolean = true) {
-  // pretend we're using the font, color, etc..
+export function print(message: string, includeNewline: boolean = true, fontColorHex: string = '#FFFFFF') {
+  const color = chalk.hex(fontColorHex)
 
   // Use stdout instead of console log since we don't want a newline after each print
   if (includeNewline) {
-    console.log(message)
+    console.log(color(message))
   } else {
-    process.stdout.write(message)
+    process.stdout.write(color(message))
   }
 }

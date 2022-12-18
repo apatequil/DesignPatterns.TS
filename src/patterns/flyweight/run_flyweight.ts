@@ -8,16 +8,11 @@ export function runExample() {
     terminal.print(`||   Flyweight Design Pattern   ||`)
     terminal.print(`==================================`)
 
-    const message = 'This is a message. There are many like it but this one is mine.'.toLowerCase()
-    // Scenario 1: demonstrate reduced memory usage with a typical sentence
-
-    // Scenario 2: Demonstrate large memory savings with a lot of repetition
-    //const message = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-
-    terminal.print(`Message to process:`)
-    terminal.print(` ${message}`)
+    // Prompt user for a message which we'll load into our document
+    const message = terminal.prompt('Enter a message: ').toLowerCase() // just lower casing to reduce the number of characters for the demo but this works without doing this
 
     const document = new Document(message)
+    terminal.print(`Message to process:`)
     document.printContents()
 
     const { sizeWithoutFlyweight, sizeWithFlyweight } =

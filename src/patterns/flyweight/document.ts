@@ -16,7 +16,6 @@ export class Document {
         this.load(documentContents)
     }
 
-
     load = (message: string, append = true): void => {
         const result: FlyweightCharacter[] = []
             ;[...message].forEach(character => {
@@ -58,7 +57,7 @@ export class Document {
         for (const ch in characterCounts) {
             const { characterFont, characterColor } = this.getCharacterDecorations(ch)
             // To calculate total memory for a given number of a specific characters *without* flyweight
-            // (size of character including flyweight data since each char is a whole object without flyweights) * number of the character
+            // (size of character including flyweight data since each char is a whole object without flyweights) * number of the characters
             const nonFlyweightTotalSize =
                 profiler.memory.sizeOfObject({
                     name: ch,

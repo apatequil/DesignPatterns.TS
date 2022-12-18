@@ -1,5 +1,9 @@
 # DesignPatterns.TS
 
+## Overview
+
+A repository containing a collection of design patterns written in Typescript.
+
 ## To Contribute
 
 There are two ways to add to this repository: manual and automated. It's suggested you use the automated tool to generate the boilerplate of the pattern allowing you to focus on implementing the pattern and demonstration code rather than the scaffolding.
@@ -26,15 +30,17 @@ To manually create a new pattern, you will need to create the following files an
 
 ####To recap:
 
-1. Create new directory in <code>./src/patterns/</code> named <code>\<patternName></code>
-2. Create new file in <code>./src/patterns/\<patternName></code> named <code>run\_\<patternName>.ts</code> which has code to demonstrate the pattern
-3. Create new file in <code>./src/scripts</code> named <code>run\_\<patternName>.ts</code> which calls the code from step 2
-4. Add new command to <code>./package.json</code> named <code>patterns:\<patternName></code> to execute the demonstration
+1. Create new directory in <code>./src/patterns/</code> named <code>\<patternName></code>.
+2. Create new file in <code>./src/patterns/\<patternName></code> named <code>run\_\<patternName>.ts</code> which has code to demonstrate the pattern.
+3. Create new file in <code>./src/scripts</code> named <code>run\_\<patternName>.ts</code> which calls the code from step 2.
+4. Add new command to <code>./package.json</code> named <code>patterns:\<patternName></code> to execute the demonstration script from step 3.
 
 ###Consider:
 If you are creating a piece of code which could be utilized by other patterns, consider placing it in the <code>./src/lib</code> directory with in a directory that makes sense.
 
 ## Patterns Implemented
+
+To view all available patterns, you can use the <code>yarn patterns:ls</code> to view which ones have been implemented and how to execute them if a demonstration script is available.
 
 - Flyweight [Documentation](./src/patterns/flyweight/docs/flyweight.md)
 

@@ -9,7 +9,7 @@ export function runExample() {
     terminal.print(`==================================`)
 
     // Prompt user for a message which we'll load into our document
-    const message = terminal.prompt('Enter a message: ').toLowerCase() // just lower casing to reduce the number of characters for the demo but this works without doing this
+    const message = terminal.prompt('Enter a message: ').toLowerCase()
 
     const document = new Document(message)
     terminal.print(`Message to process:`)
@@ -18,8 +18,11 @@ export function runExample() {
     const { sizeWithoutFlyweight, sizeWithFlyweight } =
         document.calculateMemoryStatistics(includeSizeBreakdown)
 
+    const memorySavedBytes = sizeWithoutFlyweight - sizeWithFlyweight
+    const memorySavedPercent = ((1 - (sizeWithFlyweight / sizeWithoutFlyweight)) * 100).toFixed(2)
+
     terminal.print(`Memory Profile:`)
     terminal.print(`  Without Flyweights: ${sizeWithoutFlyweight} bytes`)
-    terminal.print(`  With Flyweights: ${sizeWithFlyweight} bytes`)
-    terminal.print(`  Memory savings: ${sizeWithoutFlyweight - sizeWithFlyweight} bytes`)
+    terminal.print(`     With Flyweights: ${sizeWithFlyweight} bytes`)
+    terminal.print(`      Memory savings: ${memorySavedPercent}% (${memorySavedBytes} bytes)`)
 }

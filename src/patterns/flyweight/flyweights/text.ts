@@ -4,7 +4,7 @@ export interface IPrintableFlyweight {
   name: string
   fontFamily: string
   fontColor: string
-  print: (value: string, cursor?: { cols?: number; rows?: number }) => void
+  print: (value: string) => void
 }
 
 export class TextFlyweight implements IPrintableFlyweight {

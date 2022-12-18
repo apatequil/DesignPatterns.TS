@@ -3,11 +3,11 @@ import { buildIndent } from '../formatting/strings'
 import { question, BasicOptions } from 'readline-sync'
 
 export function info(message: string, indent: number = 0): void {
-  console.log(chalk.white(`${buildIndent(indent)}${message}`))
+  console.log(chalk.cyan(`${buildIndent(indent)}${message}`))
 }
 
 export function debug(message: string, indent: number = 0): void {
-  console.log(chalk.cyan(`${buildIndent(indent)}${message}`))
+  console.log(chalk.white(`${buildIndent(indent)}${message}`))
 }
 
 export function error(message: string, indent: number = 0): void {

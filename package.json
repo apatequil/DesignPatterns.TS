@@ -12,7 +12,8 @@
     "readline-sync": "^1.4.10"
   },
   "scripts": {
-    "ds:flyweight": "ts-node ./src/scripts/run_flyweight.ts"
+    "patterns:ls": "ts-node ./src/scripts/list_patterns.ts",
+    "patterns:flyweight": "ts-node ./src/scripts/run_flyweight.ts"
   },
   "devDependencies": {
     "@types/node": "^16.18.8",

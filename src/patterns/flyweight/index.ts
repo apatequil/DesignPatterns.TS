@@ -1,3 +1,3 @@
 export { CharacterFactory } from './character-factory'
 export { Document } from './document'
-export { runExample } from './run_flyweight'
+export { runExample } from './run-flyweight'

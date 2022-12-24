@@ -1,13 +1,13 @@
 import { profiler } from '../../lib'
 import { terminal } from '../../lib/ui'
-import { CharacterFactory } from './character-factory'
-import { FlyweightCharacter } from './flyweight-character'
+import { TextFactory } from './text-factory'
+import { PrintableText } from './printable-character'
 
 const vowels = ['a', 'e', 'i', 'o', 'u']
 
 export class Document {
-  factory = new CharacterFactory()
-  readonly contents: FlyweightCharacter[] = []
+  factory = new TextFactory()
+  readonly contents: PrintableText[] = []
 
   // Allow preloading content. This can be useful if there are common
   // flyweights that are likely to be needed and you want to save the
@@ -17,20 +17,20 @@ export class Document {
   }
 
   load = (message: string, append = true): void => {
-    const result: FlyweightCharacter[] = []
-    ;[...message].forEach(character => {
-      // For demonstration purposes, we'll set vowels to arial green and consanants to arial brown
-      // In a real-life scenario, there would be thousands of potential flyweights covering different
-      // combinations of fonts and colors
-      const { characterFont, characterColor } = this.getCharacterDecorations(character)
+    const result: PrintableText[] = []
+      ;[...message].forEach(character => {
+        // For demonstration purposes, we'll set vowels to arial green and consanants to arial brown
+        // In a real-life scenario, there would be thousands of potential flyweights covering different
+        // combinations of fonts and colors
+        const { characterFont, characterColor } = this.getCharacterDecorations(character)
 
-      result.push(
-        new FlyweightCharacter(
-          character,
-          this.factory.getCharacter(character, characterFont, characterColor),
-        ),
-      )
-    })
+        result.push(
+          new PrintableText(
+            character,
+            this.factory.getText(character, characterFont, characterColor),
+          ),
+        )
+      })
 
     // provide mechanism for clearing content by passing false into append parameter
     if (!append) {
@@ -68,7 +68,7 @@ export class Document {
       // ((size of character + size of reference to flyweight)  * number of the character) + size of flyweight
       const flyweightTotalSize =
         profiler.memory.sizeOfObject(ch) * characterCounts[ch] +
-        profiler.memory.sizeOfObject(this.factory.getCharacter(ch, characterFont, characterColor))
+        profiler.memory.sizeOfObject(this.factory.getText(ch, characterFont, characterColor))
       if (includeDetailedCount) {
         console.log(
           `Total Size for ${characterCounts[ch]} ${ch}: ${nonFlyweightTotalSize} bytes (Non-Flyweight)`,

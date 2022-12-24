@@ -1,0 +1,29 @@
+@startuml
+
+
+
+class PrintableText {
+    value: string
+    flyweight: ITextFlyweight
+}
+
+class TextFactory {
+    getText(): void
+
+}
+
+class ITextFlyweight {
+    fontName: string
+    fontColor: string
+}
+
+class Document {
+    contents: PrintableText[] {readonly}
+
+}
+
+
+Document --> TextFactory
+Document o--> PrintableText
+PrintableText ..|> ITextFlyweight
+@enduml

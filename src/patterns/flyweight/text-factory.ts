@@ -1,16 +1,16 @@
-import chalk, { Chalk as FontColor } from 'chalk'
+import { Chalk as FontColor } from 'chalk'
 import { terminal } from '../../lib/ui'
-import { IPrintableFlyweight, TextFlyweight } from './flyweights/text'
+import { ITextFlyweight, TextFlyweight } from './flyweights/text'
 
-export class CharacterFactory {
-  public readonly characterCache: { [key: string]: IPrintableFlyweight } = <any>{}
+export class TextFactory {
+  public readonly characterCache: { [key: string]: ITextFlyweight } = <any>{}
 
-  getCharacter(
+  getText(
     name: string,
     fontFamily: string,
     fontColor: string,
     enableDebug: boolean = false,
-  ): IPrintableFlyweight {
+  ): ITextFlyweight {
     const characterKey = this.buildKey(name, fontFamily, fontColor)
     if (this.characterCache[characterKey]) {
       if (enableDebug) {
@@ -21,7 +21,7 @@ export class CharacterFactory {
       if (enableDebug) {
         terminal.print(`Existing flyweight for ${characterKey} not found, creating`)
       }
-      const newChar: IPrintableFlyweight = new TextFlyweight(name, fontFamily, fontColor)
+      const newChar: ITextFlyweight = new TextFlyweight(name, fontFamily, fontColor)
       this.characterCache[characterKey] = newChar
 
       return newChar

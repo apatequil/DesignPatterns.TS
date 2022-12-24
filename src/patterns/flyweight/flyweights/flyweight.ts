@@ -1,3 +1,3 @@
-export interface IFlyweight<T> {
-  value: T;
+export interface IFlyweight {
+  name: string;
 }

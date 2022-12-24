@@ -1,12 +1,12 @@
-import { IPrintableFlyweight } from './flyweights'
+import { ITextFlyweight } from './flyweights'
 
-export class FlyweightCharacter {
+export class PrintableText {
   constructor(
     public value: string,
     // We could have the flyweight be of type TextFlyweight but it's better
     // to program against abstractions. Anything that implements IPrintableFlyweight
     // is valid here. We just happen to be using TextFlyweight concretes.
-    public readonly flyweight: IPrintableFlyweight,
+    public readonly flyweight: ITextFlyweight,
   ) { }
 
   print = (): void => {

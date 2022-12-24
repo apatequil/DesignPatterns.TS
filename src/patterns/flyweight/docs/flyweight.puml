@@ -5,6 +5,7 @@
 class PrintableText {
     value: string
     flyweight: ITextFlyweight
+    print(): void
 }
 
 class TextFactory {
@@ -15,6 +16,7 @@ class TextFactory {
 class ITextFlyweight {
     fontName: string
     fontColor: string
+    ...
 }
 
 class Document {

@@ -1,7 +1,7 @@
 import { profiler } from '../../lib'
 import { terminal } from '../../lib/ui'
 import { TextFactory } from './text-factory'
-import { PrintableText } from './printable-character'
+import { PrintableText } from './printable-text'
 
 const vowels = ['a', 'e', 'i', 'o', 'u']
 

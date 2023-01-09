@@ -11,7 +11,7 @@ export class PrintableText {
 
   print = (): void => {
     // Makes use of flyweight's operation rather than a character
-    // since the flyweight has the information needed. This way
+    // since the flyweight has the extrinsic information needed. This way
     // we pass the value into the flyweight to accomplish the same
     // thing as if the data was internal to the character
     this.flyweight.print(this.value)

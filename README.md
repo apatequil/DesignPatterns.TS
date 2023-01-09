@@ -44,6 +44,9 @@ To view all available patterns, you can use the <code>yarn patterns:ls</code> to
 
 - Flyweight [Documentation](./src/patterns/flyweight/docs/flyweight.md)
 
+## Patterns In progress
+- Proxy [Documentaion](./src/patterns/proxy/docs/proxy.md)
+
 ## Planned Patterns
 
 - Abstract Factory
@@ -51,9 +54,7 @@ To view all available patterns, you can use the <code>yarn patterns:ls</code> to
 - Bridge
 - Decorator
 - Facade
-- Flyweight
 - Mediator
 - Prototype
-- Proxy
 - Singleton
 - Visitor

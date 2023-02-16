@@ -1,17 +1,17 @@
 import { LearnSubject, PlayGame, ReadBook } from './activities'
-import { IActivity } from './activities/activity'
+import { ActivityType, IActivity } from './activities/activity'
 
 export class ActivityFactory {
-  createActivity(activityName: string): IActivity {
-    switch (activityName.toLowerCase()) {
-      case 'read book':
+  createActivity(activity: string): IActivity {
+    switch (activity) {
+      case ActivityType.ReadBook:
         return new ReadBook()
-      case 'play game':
+      case ActivityType.PlayGame:
         return new PlayGame()
-      case 'learn subject':
+      case ActivityType.LearnSubject:
         return new LearnSubject()
       default:
-        throw new Error(`Unknown activity type: ${activityName}`)
+        throw new Error('bloop')
     }
   }
 }

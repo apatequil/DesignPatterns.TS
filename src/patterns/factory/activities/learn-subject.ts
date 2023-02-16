@@ -1,8 +1,9 @@
-import { IActivity } from './activity'
+import { terminal } from '../../../lib/ui'
+import { ActivityType, IActivity } from './activity'
 
 export class LearnSubject implements IActivity {
-  activityName: string = 'Learn Subject'
+  activityName = ActivityType.LearnSubject
   doActivity(): void {
-    console.log('Learning a subject')
+    terminal.info('Learning a subject')
   }
 }

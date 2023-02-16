@@ -1,6 +1,6 @@
 import chalk, { hex } from 'chalk'
 import { buildIndent } from '../formatting/strings'
-import { question, BasicOptions } from 'readline-sync'
+import { question, BasicOptions, keyInSelect } from 'readline-sync'
 
 export function info(message: string, indent: number = 0): void {
   console.log(chalk.cyan(`${buildIndent(indent)}${message}`))
@@ -18,7 +18,19 @@ export function prompt(message: string, options?: BasicOptions): string {
   return question(message, options)
 }
 
-export function print(message: string, includeNewline: boolean = true, fontColorHex: string = '#FFFFFF') {
+export function promptWithChoiceSync<T>(
+  message: string,
+  choices: string[],
+  options?: BasicOptions,
+): T {
+  return choices[keyInSelect(choices, message, options)] as T
+}
+
+export function print(
+  message: string,
+  includeNewline: boolean = true,
+  fontColorHex: string = '#FFFFFF',
+) {
   const color = chalk.hex(fontColorHex)
 
   // Use stdout instead of console log since we don't want a newline after each print

@@ -7,8 +7,11 @@
   "author": "apatequil",
   "license": "MIT",
   "dependencies": {
+    "@types/deasync": "^0.1.2",
     "@types/readline-sync": "^1.4.4",
     "chalk": "^4.1.2",
+    "deasync": "^0.1.28",
+    "inquirer": "^8.2.2",
     "readline-sync": "^1.4.10"
   },
   "scripts": {
@@ -19,6 +22,7 @@
     "patterns:factory": "ts-node ./src/scripts/run-factory.ts"
   },
   "devDependencies": {
+    "@types/inquirer": "^8.2.2",
     "@types/node": "^16.18.8",
     "ts-node": "^10.4.0",
     "tslib": "^2.4.1",

@@ -1,8 +1,8 @@
 import { LearnSubject, PlayGame, ReadBook } from './activities'
-import { ActivityType, IActivity } from './activities/activity'
+import { ActivityType, IActivity } from './activities'
 
 export class ActivityFactory {
-  createActivity(activity: string): IActivity {
+  static createActivity(activity: string): IActivity | null {
     switch (activity) {
       case ActivityType.ReadBook:
         return new ReadBook()
@@ -11,7 +11,11 @@ export class ActivityFactory {
       case ActivityType.LearnSubject:
         return new LearnSubject()
       default:
-        throw new Error('bloop')
+        return null
     }
+  }
+
+  static listActivities(): string[] {
+    return Object.values(ActivityType)
   }
 }

@@ -1,10 +1,6 @@
-export enum ActivityType {
-  PlayGame = 'Play Game',
-  ReadBook = 'Read Book',
-  LearnSubject = 'Learn Subject',
-}
+import { ActivityType } from "."
 
 export interface IActivity {
-  activityName: ActivityType
+  activity: ActivityType
   doActivity(): void
 }

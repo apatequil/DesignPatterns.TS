@@ -1,6 +1,6 @@
 import { terminal } from "../../../lib/ui";
 import { ActivityType } from "../activities";
-import { AgeRequirement, LicenseTypeRequirement, LicenseTypes } from "../activities/activity-requirements";
+import { AgeRequirement, LicenseTypeRequirement, LicenseType } from "../activities/activity-requirements";
 import { BaseActivityFactory } from "./base-activity-factory";
 import { ScubaDive } from "../activities/scuba-dive";
 
@@ -8,7 +8,7 @@ export class ScubaDiveFactory extends BaseActivityFactory<ScubaDive> {
 
     requirements = [
         new AgeRequirement(12),
-        new LicenseTypeRequirement(LicenseTypes.Scuba)
+        new LicenseTypeRequirement(LicenseType.Scuba)
     ]
 
     handledActivities: string[] = [

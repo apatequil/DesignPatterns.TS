@@ -37,7 +37,7 @@ export class StateResidencyRequirement implements IRequirement {
     description = `You must reside in one of the following state(s) ${this.validStates.join(',')} for this activity`
 }
 
-export enum LicenseTypes {
+export enum LicenseType {
     None = 'None',
     Passenger = 'Passenger',
     Commercial = 'Commercial',
@@ -46,10 +46,10 @@ export enum LicenseTypes {
 }
 
 export class LicenseTypeRequirement implements IRequirement {
-    constructor(public readonly requiredLicenseType: LicenseTypes) { }
+    constructor(public readonly requiredLicenseType: LicenseType) { }
     checkRequirement(): boolean {
-        const licenseType = terminal.promptWithChoiceSync<string>('What type of license do you have? ', Object.keys(LicenseTypes))
+        const licenseType = terminal.promptWithChoiceSync<string>('What type of license do you have? ', Object.keys(LicenseType))
         return licenseType === this.requiredLicenseType
     }
-    description = `You must have a(n) ${LicenseTypes[this.requiredLicenseType]} license for this activity`
+    description = `You must have a(n) ${LicenseType[this.requiredLicenseType]} license for this activity`
 }

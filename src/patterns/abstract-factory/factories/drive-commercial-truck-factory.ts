@@ -1,6 +1,6 @@
 import { terminal } from "../../../lib/ui";
 import { ActivityType } from "../activities";
-import { AgeRequirement, LicenseTypeRequirement, LicenseTypes } from "../activities/activity-requirements";
+import { AgeRequirement, LicenseTypeRequirement, LicenseType } from "../activities/activity-requirements";
 import { DriveCar } from "../activities/drive-car";
 import { DriveCommercialTruck } from "../activities/drive-commercial-truck";
 import { BaseActivityFactory } from "./base-activity-factory";
@@ -9,7 +9,7 @@ export class DriveCommercialTruckFactory extends BaseActivityFactory<DriveCommer
 
     requirements = [
         new AgeRequirement(18),
-        new LicenseTypeRequirement(LicenseTypes.Commercial)
+        new LicenseTypeRequirement(LicenseType.Commercial)
     ]
 
     handledActivities: string[] = [

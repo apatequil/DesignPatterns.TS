@@ -1,0 +1,44 @@
+@startuml
+
+
+
+interface IActivity {
+    activity: ActivityType
+    doActivity(): void
+}
+
+class ActivityFactory {
+    createActivity(): IActivity
+}
+
+note bottom: Controls which activity is created
+
+class ReadBook {
+    activity: ActivityType
+     doActivity(): void
+    ...
+}
+class PlayGame {
+    activity: ActivityType
+     doActivity(): void
+    ...
+}
+class LearnSubject {
+    activity: ActivityType
+     doActivity(): void
+    ...
+}
+
+class Consumer {
+    factory: ActivityFactory
+}
+
+note left: Simply needs to call doActivity on whichever activity is returned
+
+Consumer --> ActivityFactory
+ActivityFactory o--> IActivity
+ReadBook ..|> IActivity
+PlayGame..|> IActivity
+LearnSubject ..|> IActivity
+
+@enduml

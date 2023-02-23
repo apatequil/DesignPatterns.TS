@@ -1,0 +1,55 @@
+@startuml
+
+interface IActivity {
+    activity: ActivityType
+    doActivity(): void
+}
+
+class DriveCar extends IActivity {}
+class DriveCommercialTruck extends IActivity {}
+
+class BaseActivityFactory<T extends IActivity> {
+  requirements: IRequirement[]
+  handledActivities: string[]
+  createActivity(): T | null
+
+  checkRequirements()
+  printRequirements()
+  canHandleActivity()
+}
+
+
+class DriveCarFactory extends BaseActivityFactory {
+
+    requirements: IRequirement[]
+    handledActivities: string[]
+
+    createActivity(): DriveCar | null
+}
+
+class DriveCommercialTruckFactory extends BaseActivityFactory {
+
+    requirements: IRequirement[]
+    handledActivities: string[]
+
+    createActivity(): DriveCommercialTruck | null
+}
+
+
+class AbstractActivityFactory {    
+  registeredActivities: BaseActivityFactory[]: []
+  registerFactory(activity: BaseActivityFactory): void
+  registerFactories(activities: BaseActivityFactory[])
+  createActivity(activity: string): IActivity | null
+  listActivities(): string[]
+}
+
+class Consumer {}
+
+Consumer --> AbstractActivityFactory
+DriveCarFactory o--> IActivity
+DriveCommercialTruckFactory o--> IActivity
+AbstractActivityFactory o--> BaseActivityFactory
+
+
+@enduml

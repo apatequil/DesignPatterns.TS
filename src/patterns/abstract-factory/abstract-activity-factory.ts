@@ -18,7 +18,7 @@ export class AbstractActivityFactory {
   // Main entry into the factory. This takes in the activity chosen, identifies
   // which handler to use (without knowing any details since the individual factories
   // make this determination), and then uses the factory to create an instance of the
-  // activity and execute it
+  // activity
   static createActivity(activity: string): IActivity | null {
 
     const factoryHandler = this.registeredActivities.find(x => x.canHandleActivity(activity))
@@ -26,7 +26,9 @@ export class AbstractActivityFactory {
   }
 
   // This isn't necessary but makes the UI handling easier by providing a list of activity types
-  // which can be handled by any of the registered factories
+  // which can be handled by any of the registered factories. With this the calling function
+  // won't need to know about the activities, it simply gets a list of names back which can
+  // be passed to the createActivity above.
   static listActivities(): string[] {
 
     const availableActivities: string[] = []

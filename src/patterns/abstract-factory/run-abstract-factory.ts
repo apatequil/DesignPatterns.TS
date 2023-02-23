@@ -21,6 +21,6 @@ export function runExample() {
 		AbstractActivityFactory.listActivities(),
 	)
 
-	// Exectute activity if it exists
+	// Execute activity if it exists
 	AbstractActivityFactory.createActivity(chosenActivity)?.doActivity()
 }

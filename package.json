@@ -19,7 +19,8 @@
     "patterns:create": "ts-node ./src/scripts/create-pattern.ts",
     "patterns:ls": "ts-node ./src/scripts/list-patterns.ts",
     "patterns:flyweight": "ts-node ./src/scripts/run-flyweight.ts",
-    "patterns:factory": "ts-node ./src/scripts/run-factory.ts"
+    "patterns:factory": "ts-node ./src/scripts/run-factory.ts",
+    "patterns:abstract-factory": "ts-node ./src/scripts/run-abstract-factory.ts"
   },
   "devDependencies": {
     "@types/inquirer": "^8.2.2",

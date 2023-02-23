@@ -1,5 +1,6 @@
 import { terminal } from '../../lib/ui'
 import { ActivityFactory } from './activity-factory'
+
 export function runExample() {
   terminal.info('Running factory pattern')
 
@@ -9,6 +10,6 @@ export function runExample() {
     ActivityFactory.listActivities(),
   )
 
-  // // Exectute activity if it exists
+  // Exectute activity if it exists
   ActivityFactory.createActivity(chosenActivity)?.doActivity()
 }

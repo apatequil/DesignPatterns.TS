@@ -9,7 +9,7 @@ export function runExample() {
     terminal.print(`==================================`)
 
     // Prompt user for a message which we'll load into our document
-    const message = terminal.prompt('Enter a message: ').toLowerCase()
+    const message = terminal.prompt<string>('Enter a message: ').toLowerCase()
 
     const document = new Document(message)
     terminal.print(`Message to process:`)

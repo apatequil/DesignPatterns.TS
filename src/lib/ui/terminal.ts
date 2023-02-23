@@ -14,8 +14,8 @@ export function error(message: string, indent: number = 0): void {
   console.log(chalk.redBright(`${buildIndent(indent)}${message}`))
 }
 
-export function prompt(message: string, options?: BasicOptions): string {
-  return question(message, options)
+export function prompt<T>(message: string, options?: BasicOptions): T {
+  return question(message, options) as T
 }
 
 export function promptWithChoiceSync<T>(

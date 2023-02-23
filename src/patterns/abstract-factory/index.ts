@@ -1,0 +1,1 @@
+export { runExample } from './run-abstract-factory'

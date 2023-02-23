@@ -5,7 +5,7 @@ var fs = require('fs')
 const packageLocation = './package.json'
 
 // Get the name of the pattern from the user
-let patternName = terminal.prompt('Enter a pattern name: ').toLowerCase().replace(' ', '_')
+let patternName = (terminal.prompt('Enter a pattern name: ') as string).toLowerCase().replace(' ', '_')
 
 // Create pattern root directory
 let patternRoot = `./src/patterns/${patternName}`

@@ -1,7 +1,8 @@
-import { ActivityType, IActivity } from '.'
 import { terminal } from '../../../lib/ui'
-export class ScubaDive implements IActivity {
-  activity = ActivityType.ScubaDive
+import { BaseActivity } from './base-activity'
+
+export class ScubaDive extends BaseActivity {
+  static activity = 'Scuba Dive'
 
   doActivity(): void {
     terminal.info('SCUBA diving')

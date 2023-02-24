@@ -1,7 +1,9 @@
-import { ActivityType, IActivity } from '.'
+import { IActivity } from '.'
 import { terminal } from '../../../lib/ui'
-export class FlyAirplane implements IActivity {
-  activity = ActivityType.FlyAirplane
+import { BaseActivity } from './base-activity'
+
+export class FlyAirplane extends BaseActivity {
+  static activity = 'Fly Airplane'
 
   doActivity(): void {
     terminal.info('Flying airplane')

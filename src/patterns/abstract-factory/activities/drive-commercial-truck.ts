@@ -1,7 +1,8 @@
-import { ActivityType, IActivity } from '.'
 import { terminal } from '../../../lib/ui'
-export class DriveCommercialTruck implements IActivity {
-  activity = ActivityType.DriveCommercialTruck
+import { BaseActivity } from './base-activity'
+
+export class DriveCommercialTruck implements BaseActivity {
+  static activity = 'Drive Commercial Truck'
 
   doActivity(): void {
     terminal.info('Driving commercial truck')

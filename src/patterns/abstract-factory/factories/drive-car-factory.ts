@@ -1,5 +1,4 @@
 import { terminal } from "../../../lib/ui";
-import { ActivityType } from "../activities";
 import { AgeRequirement, LicenseTypeRequirement, LicenseType } from "../activities/activity-requirements";
 import { DriveCar } from "../activities";
 import { BaseActivityFactory } from "./base-activity-factory";
@@ -12,7 +11,7 @@ export class DriveCarFactory extends BaseActivityFactory<DriveCar> {
     ]
 
     handledActivities: string[] = [
-        ActivityType.DriveCar
+        DriveCar.activity
     ]
 
     createActivity(): DriveCar | null {

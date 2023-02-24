@@ -1,7 +1,6 @@
 @startuml
 
 interface IActivity {
-    activity: ActivityType
     doActivity(): void
 }
 

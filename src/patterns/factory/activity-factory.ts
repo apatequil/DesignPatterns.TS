@@ -1,4 +1,4 @@
-import { LearnSubject, PlayGame, ReadBook } from './activities'
+import { LearnSubject, PlayGame, ReadBook/*, ScubaDive*/ } from './activities'
 import { ActivityType, IActivity } from './activities'
 
 export class ActivityFactory {
@@ -10,6 +10,8 @@ export class ActivityFactory {
         return new PlayGame()
       case ActivityType.LearnSubject:
         return new LearnSubject()
+      // case ActivityType.ScubaDive:
+      //   return new ScubaDive()
       default:
         return null
     }

@@ -1,4 +1,4 @@
-import { LearnSubject, PlayGame, ReadBook/*, ScubaDive*/ } from './activities'
+import { ReadDigitalBook, ReadBrailleBook, ReadBook /*, ScubaDive*/ } from './activities'
 import { ActivityType, IActivity } from './activities'
 
 export class ActivityFactory {
@@ -6,12 +6,10 @@ export class ActivityFactory {
     switch (activity) {
       case ActivityType.ReadBook:
         return new ReadBook()
-      case ActivityType.PlayGame:
-        return new PlayGame()
-      case ActivityType.LearnSubject:
-        return new LearnSubject()
-      // case ActivityType.ScubaDive:
-      //   return new ScubaDive()
+      case ActivityType.ReadDigitalBook:
+        return new ReadDigitalBook()
+      case ActivityType.ReadBrailleBook:
+        return new ReadBrailleBook()
       default:
         return null
     }

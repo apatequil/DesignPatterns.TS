@@ -1,6 +1,5 @@
 export enum ActivityType {
-    PlayGame = 'Play Game',
-    ReadBook = 'Read Book',
-    LearnSubject = 'Learn Subject',
-    //ScubaDive = 'Scuba Dive',
+  ReadBrailleBook = 'Read Braille Book',
+  ReadBook = 'Read Book',
+  ReadDigitalBook = 'Read Digital Book',
 }

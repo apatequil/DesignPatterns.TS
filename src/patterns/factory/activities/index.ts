@@ -1,6 +1,5 @@
 export { ActivityType } from './activity-type'
 export { IActivity } from './activity'
-export { LearnSubject } from './learn-subject'
-export { PlayGame } from './play-game'
+export { ReadDigitalBook } from './read-digital-book'
+export { ReadBrailleBook } from './read-braille-book'
 export { ReadBook } from './read-book'
-//export { ScubaDive } from './scuba-dive'

@@ -1,8 +1,8 @@
 import { IActivity } from '.'
 import { terminal } from '../../../lib/ui'
 
-export class LearnSubject implements IActivity {
+export class ReadBrailleBook implements IActivity {
   doActivity(): void {
-    terminal.info('Learning a subject')
+    terminal.info('Reading with touch')
   }
 }

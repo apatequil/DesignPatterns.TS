@@ -43,9 +43,9 @@ If you are creating a piece of code which could be utilized by other patterns, c
 To view all available patterns, you can use the <code>yarn patterns:ls</code> to view which ones have been implemented and how to execute them if a demonstration script is available.
 
 - Flyweight [Documentation](./src/patterns/flyweight/docs/flyweight.md)
-
+- Factory [Documentation](./src/patterns/factory/docs/factory.md)
+- Abstract Factory [Documentation](./src/patterns/abstract-factory/docs/abstract-factory.md)
 ## Patterns In progress
-- Proxy [Documentaion](./src/patterns/proxy/docs/proxy.md)
 
 ## Planned Patterns
 
